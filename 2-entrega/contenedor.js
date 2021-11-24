@@ -30,11 +30,15 @@ class Contenedor{
 
     deleteAll = () => this.fileList = []
 
-    seeFile = () => this.file.readFile().then((a) => console.log(a, this.file.fileOpened))
+    seeFile = () => this.file.readFile().then((a) => console.log(a, this.file.data))
 
     getFile = async () => {
-        await this.file.readFile()
-        this.fileList = await this.file.data
+        try{
+            await this.file.readFile()
+            this.fileList = this.file.data
+        }catch(e){
+            console.log(e)
+        }
     }
     
 }
