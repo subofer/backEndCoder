@@ -32,6 +32,10 @@ class Contenedor{
 
     seeFile = () => this.file.readFile().then((a) => console.log(a, this.file.fileOpened))
 
+    getFile = async () => {
+        await this.file.readFile()
+        this.fileList = await this.file.data
+    }
     
 }
 

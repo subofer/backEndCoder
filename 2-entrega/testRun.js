@@ -20,14 +20,26 @@ let productos = [{
 
 ]
 
-let productosText = new Contenedor("productos3.txt", productos, true)
+//let productosText = new Contenedor("productos3.txt", productos, true)
 
-console.log(productosText.getById(2))
 
-console.log(productosText.getAll())
+let productosText = new Contenedor("productos3.txt")
+/*
+productosText.saveAndWrite({
+    title: "naranja",
+    precio: 65,
+    tumbnail: "imagen4"
+})
 
-productosText.deletById(2)
+productosText.saveAndWrite({
+    title: "manzana",
+    precio: 34,
+    tumbnail: "imagen2"
+})
+*/
 
-console.log(productosText.getAll())
+productosText.getFile().then( () => console.log("FileList",productosText.getAll()))
 
-productosText.seeFile()
+
+
+//productosText.seeFile()
