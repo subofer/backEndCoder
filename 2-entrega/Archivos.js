@@ -17,12 +17,8 @@ class Archivo{
     
     readFile = async () => 
         fs.readFile(this.filename, 'utf8')
-            .then(data => {
-                console.log("data leida", JSON.parse(data))
-                this.data = data
-            
-            })
-            .catch(err => console.log("Fallo la lectura, se va a crear -->"))
+            .then(data => this.data = JSON.parse(data))
+            .catch(err => console.log("Fallo la lectura"))
 
     createFile = async () =>
         fs.writeFile(this.filename, '', 'utf8' )
